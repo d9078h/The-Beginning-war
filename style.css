@@ -1,0 +1,127 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #1d2b64, #f8cdda);
+  color: white;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 180px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#vs-banner {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.8s ease;
+  z-index: 999;
+}
+
+#vs-banner.show-vs {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+#vs-left, #vs-right {
+  flex: 1;
+  text-align: center;
+}
+
+#vs-text {
+  color: red;
+  flex: 0.5;
+}
+
+#animation-stage {
+  margin-top: 30px;
+  text-align: center;
+  min-height: 200px;
+  position: relative;
+}
+
+.result-box {
+  font-size: 2rem;
+  margin: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.result-box.show {
+  opacity: 1;
+}
+
+.winner {
+  font-size: 3rem;
+  color: gold;
+  font-weight: bold;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.firework {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.explanation {
+  margin-top: 30px;
+  font-size: 0.95rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 12px;
+}

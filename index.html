@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전쟁 시뮬레이션</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>전쟁 시뮬레이션</h1>
+    <div class="input-group">
+      <input type="text" id="name1" placeholder="국가 1 이름">
+      <input type="number" id="pop1" placeholder="인구수 1 (예: 100)" step="1">
+      <input type="number" id="tech1" placeholder="기술력 척도 단계 1 (1.0~10.0)" step="0.1" min="1" max="10">
+      <select id="pol1">
+        <option value="1">혼란</option>
+        <option value="1.5">안정</option>
+        <option value="2">강한 통합</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="name2" placeholder="국가 2 이름">
+      <input type="number" id="pop2" placeholder="인구수 2 (예: 100)" step="1">
+      <input type="number" id="tech2" placeholder="기술력 척도 단계 2 (1.0~10.0)" step="0.1" min="1" max="10">
+      <select id="pol2">
+        <option value="1">혼란</option>
+        <option value="1.5">안정</option>
+        <option value="2">강한 통합</option>
+      </select>
+    </div>
+
+    <button onclick="simulateWar()">시뮬레이션 시작</button>
+
+    <div id="vs-banner">
+      <div id="vs-left"></div>
+      <div id="vs-text">VS</div>
+      <div id="vs-right"></div>
+    </div>
+
+    <div id="animation-stage"></div>
+
+    <div class="explanation">
+      <h3>💡 배율 설명</h3>
+      <p><strong>기술력 척도 단계:</strong> 1.0~10.0까지 존재하며, 단계마다 3배씩 증가합니다.<br>
+        배율 공식: <code>3^(척도단계 - 1)</code></p>
+      <p><strong>정치 상황 배율:</strong> 혼란 ×1 / 안정 ×1.5 / 강한 통합 ×2</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
